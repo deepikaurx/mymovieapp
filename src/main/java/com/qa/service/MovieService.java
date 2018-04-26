@@ -38,9 +38,9 @@ public class MovieService implements IMovieService {
 	
 	
 	@Override
-	public String updateMovie(Long id) {
+	public String updateMovie(String JSONMovie) {
 		
-		return repo.updateMovie(id);
+		return repo.updateMovie(JSONMovie);
 		
 	}
 
