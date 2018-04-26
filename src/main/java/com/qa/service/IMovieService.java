@@ -9,5 +9,6 @@ public interface IMovieService {
 	
 	String deleteMovie(Long id);
 
+	String updateMovie(Long id);
 	
 }

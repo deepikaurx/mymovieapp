@@ -36,6 +36,17 @@ public class MovieService implements IMovieService {
 	}
 	
 	
+	
+	@Override
+	public String updateMovie(Long id) {
+		
+		return repo.updateMovie(id);
+		
+	}
+
+	
+	
+	
 }
 
 
