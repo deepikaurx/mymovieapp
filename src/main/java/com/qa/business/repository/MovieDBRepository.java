@@ -82,8 +82,9 @@ public class MovieDBRepository implements IMovieRepository {
 	public String updateMovie(String movieJSON) {
 		Movie updateMovie = util.getObjectForJSON(movieJSON, Movie.class);
 		Movie aMovie = findMovie(new Long(updateMovie.getId()));
-		if(aMovie !=null) {
+		if(aMovie != null) {
 		aMovie = updateMovie;
+		manager.merge(aMovie);
 		return "{\"message\":\"Movie updated\"}";
 		} else {
 			return "{\"message\":\"Could not update movie\"}";
