@@ -30,7 +30,6 @@ public class MovieDBRepository implements IMovieRepository {
 	private JSONUtil util;
 	
 	public String getAllMovies() {
-		LOGGER.info("In MovieDBRepository getAllMovies");
 		Query query = manager.createQuery("Select m FROM Movie m");
 		Collection<Movie> movies = (Collection<Movie>) query.getResultList();
 		return util.getJSONForObject(movies);
