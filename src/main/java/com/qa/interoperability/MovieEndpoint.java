@@ -48,5 +48,13 @@ public class MovieEndpoint {
 	}
 	
 	
+	@POST
+	@Path("json/{id}")
+	@Produces({"application/json"})
+	public String updateMovie(@PathParam("id")Long id) {
+		return service.updateMovie(id);
+	}
+	
+	
 	
 }
