@@ -36,24 +36,23 @@ public class MovieDBRepository implements IMovieRepository {
 	}
 
 	@Override
-	public String getMovie(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String createMovie(String movie) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String deleteMovie(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	public String getAMovie(Long id) {
+		 Movie amovie = findMovie(id);
+		 if(amovie != null) {
+			 return util.getJSONForObject(amovie);
+			 
+		 } else {
+			 return  "{\"message\":\"movie not found\"}";
+		 }
 	
+	}
+
+	private Movie findMovie(Long id) {
+	 return manager.find(Movie.class, id);
+		
+	}
+
+
 	
 
 	
