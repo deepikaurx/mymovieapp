@@ -6,5 +6,8 @@ public interface IMovieService {
 	String getAMovie(Long id);
 	
 	String createMovie(String jsonMovie);
+	
+	String deleteMovie(Long id);
 
+	
 }
